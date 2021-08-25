@@ -1,7 +1,7 @@
 <template>
-  <div class="">
+  <section class="home-composite">
     <Header/>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

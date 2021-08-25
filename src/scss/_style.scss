@@ -6,6 +6,7 @@
 * {
   @include base-mixins.remove-defaults;
   background-color: base-variables.$background-color;
+  font-size: 16px;
 }
 
 #app {
@@ -65,12 +66,26 @@
 // Margin
 
 .ml-0\.5 {
-  margin-left: 0.5rem;
+  margin-left: 0.5em;
 }
 
+.ml-1 {
+  margin-left: 1em;
+}
 
 // Padding
 
+.p-1 {
+  padding: 1em;
+}
+
+.p-2 {
+  padding: 2em;
+}
+
+.p-3 {
+  padding: 3em;
+}
 
 // Font
 
@@ -169,3 +184,14 @@
 .font-size-42 {
   font-size: 42px;
 }
+
+.font-size-50 {
+  font-size: 50px;
+}
+
+// Width
+
+.w-full {
+  width: 100%;
+}
+

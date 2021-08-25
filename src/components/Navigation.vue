@@ -1,30 +1,19 @@
 <template>
   <nav class="navigation-composite">
     <div class="navigation-container">
-      <div class="navigation-container__logo-container flex justify-content__space-evenly">
-        <div class="navigation-container__logo-container__logo-icon">
-          Icon
-        </div>
-        <div class="navigation-container__logo-container__logo-text
-                    font-weight-bolder
-                    font-pt
-                    font-italic
-                    font-size-37
-        ">
-          Cinematch
-        </div>
-      </div>
+      <Logo name="Cinematch" />
     </div>
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Logo from '@/components/Logo.vue';
 
 export default defineComponent({
   name: 'Navigation',
-  props: {
-    msg: String,
+  components: {
+    Logo,
   },
 });
 </script>
