@@ -1,0 +1,171 @@
+@use "variables/base-variables";
+@use "mixins/base-mixins";
+@use "functions/base-functions";
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  @include base-mixins.remove-defaults;
+  background-color: base-variables.$background-color;
+}
+
+#app {
+  @include base-mixins.set-font();
+  color: base-variables.$primary;
+}
+
+
+// Default classes declaration
+
+// Flex
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// Justify content
+
+.justify-content__center {
+  justify-content: center;
+}
+
+.justify-content__space-around {
+  justify-content: space-around;
+}
+
+.justify-content__space-between {
+  justify-content: space-between;
+}
+
+.justify-content__space-evenly {
+  justify-content: space-evenly;
+}
+
+// Align Items
+
+.align-items__center {
+  align-items: center;
+}
+
+.align-items__flex-start {
+  align-items: flex-start;
+}
+
+.align-items__flex-end {
+  align-items: flex-end;
+}
+
+// Margin
+
+.ml-0\.5 {
+  margin-left: 0.5rem;
+}
+
+
+// Padding
+
+
+// Font
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.font-weight-bolder {
+  font-weight: bolder;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-pt {
+  font-family: 'PT Serif', Roboto, Helvetica, Arial, serif ;
+}
+
+.font-size-8 {
+  font-size: 8px;
+}
+
+.font-size-10 {
+  font-size: 10px;
+}
+
+.font-size-11 {
+  font-size: 11px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-12\.5 {
+  font-size: 12.5px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.font-size-22 {
+  font-size: 22px;
+}
+
+.font-size-24 {
+  font-size: 24px;
+}
+
+.font-size-26 {
+  font-size: 26px;
+}
+
+.font-size-28 {
+  font-size: 28px;
+}
+
+.font-size-30 {
+  font-size: 30px;
+}
+
+.font-size-32 {
+  font-size: 32px;
+}
+
+.font-size-36 {
+  font-size: 36px;
+}
+
+.font-size-37 {
+  font-size: 37px;
+}
+
+.font-size-38 {
+  font-size: 38px;
+}
+
+.font-size-40 {
+  font-size: 40px;
+}
+
+.font-size-42 {
+  font-size: 42px;
+}

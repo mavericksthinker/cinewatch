@@ -1,0 +1,17 @@
+// Only keep universal mixins in this file, rest can be kept in specific mixins file and imported when required
+
+@mixin remove-defaults {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin set-font(
+  $type: #{Roboto, Helvetica, Arial, sans-serif},
+  $webkit-smoothing: antialiased,
+  $osx-font-smoothing: auto
+) {
+  font-family: $type;
+  -webkit-font-smoothing: $webkit-smoothing;
+  -moz-osx-font-smoothing: $osx-font-smoothing;
+}
