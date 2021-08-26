@@ -13,6 +13,11 @@
 ```shell
 git clone https://github.com/mavericksthinker/cinewatch.git
 ```
+- Navigate into the directory
+
+```shell
+cd cinewatch
+```
 
 - ### Install dependencies
 
