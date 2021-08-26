@@ -1,6 +1,6 @@
 <template>
-  <section class="home-composite">
-    <Header/>
+  <section class="home-container">
+    <Header class="header"/>
   </section>
 </template>
 

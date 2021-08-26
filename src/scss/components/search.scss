@@ -1,0 +1,25 @@
+@use "src/scss/variables/base-variables";
+
+.search-bar {
+  padding: 0.5em 1.1em;
+  border-radius: 50px;
+}
+
+.search-icon {
+  background-color: inherit;
+  color: base-variables.$background-color;
+  font-size: 1.5rem
+}
+
+.search-bar__input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-left: 0.3em;
+  font-weight: 300;
+  color: base-variables.$placeholder-text-color;
+  &::placeholder {
+    color: rgb(base-variables.$placeholder-text-color, 0.7);
+  }
+}

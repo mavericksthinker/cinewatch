@@ -1,5 +1,7 @@
 <template>
-  <Navigation class="navigation"/>
+  <header class="header-container">
+    <Navigation class="navigation flex justify-content__space-around"/>
+  </header>
 </template>
 
 <script lang="ts">
