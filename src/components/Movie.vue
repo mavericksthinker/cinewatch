@@ -16,22 +16,22 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'movie' as string,
+  name: 'movie',
   props: {
     movie: {},
   },
   computed: {
-    getMovieRating(): string {
+    getMovieRating() {
       return `${this.movie.rating || 0}`;
     },
-    getMovieStarring(): string {
+    getMovieStarring() {
       return `Starring: ${this.movie.actorIds.join(', ')}`;
     },
-    getMoviePlot(): string {
+    getMoviePlot() {
       return `${this.movie.plot.substr(0, 120)}...`;
     },
   },

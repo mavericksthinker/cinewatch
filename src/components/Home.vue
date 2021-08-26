@@ -10,7 +10,7 @@
   <Loader class="loader" :class="{visible: loading}" />
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import Loader from '@/components/Loader.vue';
 import Header from '@/components/Header.vue';
@@ -77,10 +77,10 @@ export default defineComponent({
       this.loading = false;
       console.log(this.movies[1]);
     },
-    getUrlToRetrieveMovies(): string {
+    getUrlToRetrieveMovies() {
       return BASE_URL + MOVIES;
     },
-    getUrlToRetrieveActors():string {
+    getUrlToRetrieveActors() {
       return BASE_URL + ACTORS;
     },
   },
