@@ -1,12 +1,12 @@
 <template>
-  <nav class="navigation-composite w-full">
+  <section class="navigation-composite w-full">
     <div class="navigation-container flex justify-content__space-between align-items__center">
       <Logo class="logo" :name="appName" />
       <Search class="search" />
       <AccountInfo class="account-info" :user-name="userName"/>
     </div>
     <Search class="search-840" />
-  </nav>
+  </section>
 </template>
 
 <script lang="ts">

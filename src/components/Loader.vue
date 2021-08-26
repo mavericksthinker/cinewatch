@@ -1,5 +1,7 @@
 <template>
-  <fa icon="spinner" class="logo-icon" />
+  <section class="loader-overlay">
+    <fa icon="spinner" class="loader-icon logo-icon" />
+  </section>
 </template>
 
 <script lang="ts">

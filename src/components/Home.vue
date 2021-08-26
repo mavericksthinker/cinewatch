@@ -1,18 +1,20 @@
 <template>
-  <section class="loader-overlay" :class="{visible: loading}">
-    <Loader class="loader"/>
-  </section>
-  <section class="header-composite">
+  <header class="header-composite">
     <Header class="header"/>
-  </section>
-  <section class="body-composite">
-  </section>
+  </header>
+  <main class="body-main">
+    <section class="body-composite">
+      <Movies :movies="movies"/>
+    </section>
+  </main>
+  <Loader class="loader" :class="{visible: loading}" />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
-import Header from '@/components/Header.vue';
 import Loader from '@/components/Loader.vue';
+import Header from '@/components/Header.vue';
+import Movies from '@/components/Movies.vue';
 
 const BASE_URL = 'https://0zrzc6qbtj.execute-api.us-east-1.amazonaws.com/kinside/';
 const ACTORS = 'actors';
@@ -23,6 +25,7 @@ export default defineComponent({
   components: {
     Loader,
     Header,
+    Movies,
   },
   created() {
     this.getActors();
@@ -40,13 +43,12 @@ export default defineComponent({
   },
   methods: {
     getActors() {
-      console.log('Making actors request');
+      this.loading = true;
       return this.axios.get(this.getUrlToRetrieveActors()).then(({ data }) => {
         this.generateObjectMapperForActors(data);
       });
     },
     getMovies() {
-      console.log('Making movies request');
       return this.axios.get(this.getUrlToRetrieveMovies()).then(({ data }) => {
         this.resolveMoviesDetails(data);
       });
@@ -62,6 +64,7 @@ export default defineComponent({
       });
     },
     resolveMoviesDetails(movies) {
+      this.loading = true;
       movies.map((movie) => {
         const actors = movie.actorIds;
         actors.forEach((actorId, index) => {
@@ -71,11 +74,13 @@ export default defineComponent({
         return movie;
       });
       this.movies = movies;
+      this.loading = false;
+      console.log(this.movies[1]);
     },
-    getUrlToRetrieveMovies() {
+    getUrlToRetrieveMovies(): string {
       return BASE_URL + MOVIES;
     },
-    getUrlToRetrieveActors() {
+    getUrlToRetrieveActors():string {
       return BASE_URL + ACTORS;
     },
   },

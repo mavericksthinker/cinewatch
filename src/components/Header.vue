@@ -1,7 +1,7 @@
 <template>
-  <header class="header-container">
+  <nav class="header-container">
     <Navigation class="navigation" app-name="Cinematch"/>
-  </header>
+  </nav>
 </template>
 
 <script lang="ts">

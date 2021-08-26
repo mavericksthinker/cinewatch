@@ -1,0 +1,64 @@
+@use "src/scss/variables/base-variables";
+
+.movie-container {
+  cursor: pointer;
+  width: 427px;
+  height: 536px;
+  margin-bottom: 2.5em;
+  border-radius: 40px;
+  transition: 0.1s all linear;
+  overflow: hidden;
+
+  &:hover {
+    border-left: 4px solid;
+    border-bottom: 4px solid;
+    .movie-description {
+      display: block;
+    }
+  }
+}
+
+.movie-card {
+  padding: 2em 1em 2em 2em;
+  width: 100%;
+  background-color: rgba(base-variables.$background-color, 0.6);
+}
+
+.movie-title,
+.movie-rating,
+.movie-starring {
+  font-weight: bold;
+}
+
+.movie-title {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.movie-rating {
+  font-size: 18px;
+  color: base-variables.$body-content;
+  margin-top: 0.5em;
+  font-family: "Acumnin", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.movie-rating-over {
+  color: rgba(base-variables.$body-content, 0.6);
+}
+
+.movie-description {
+  display: none;
+}
+
+.movie-starring {
+  font-size: 13px;
+  color: base-variables.$body-content;
+  margin-top: 0.6em;
+}
+
+.movie-plot {
+  font-size: 13px;
+  margin-top: 0.4em;
+  color: base-variables.$body-content;
+}

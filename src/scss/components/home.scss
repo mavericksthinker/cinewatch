@@ -1,35 +1,15 @@
-.loader-overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 150;
-}
-
-.loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 36px;
-  color: rgba(255, 255, 255, 0.9);
-  animation: spin 1.2s infinite linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.header-composite {
-  padding: 0 2em;
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+  padding: 1em 2em;
 }
 
 .header {
   z-index: 100;
+}
+
+.body-main {
+  padding: 1em 2em;
 }
