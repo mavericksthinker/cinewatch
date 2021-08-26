@@ -1,0 +1,22 @@
+.search {
+  width: 20%;
+
+  @media (max-width: 840px) {
+    display: none;
+  }
+}
+
+.search-840 {
+  margin-top: 1em;
+  display: none;
+
+  @media (max-width: 840px) {
+    display: flex;
+  }
+
+  @media (max-width: 540px) {
+    display: flex;
+    margin-top: 2em;
+  }
+
+}

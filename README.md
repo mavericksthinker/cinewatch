@@ -1,4 +1,9 @@
-# cine-match
+# Cinematch
+
+## Requirements
+
+- Node
+- Npm/yarn
 
 ## Project setup
 ```
@@ -15,10 +20,14 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Lints and fixes on files
 ```
 npm run lint
 ```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### NOTE
+
+- To avoid cors please use this [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for chrome.
