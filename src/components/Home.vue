@@ -20,9 +20,9 @@ export default defineComponent({
     Loader,
     Header,
   },
-  // created() {
-  //
-  // },
+  created() {
+    this.getActors();
+  },
   data() {
     return {
       search: '' as string,
@@ -32,9 +32,21 @@ export default defineComponent({
     };
   },
   methods: {
-    // getActors() {
-    //
-    // },
+    getActors() : void {
+      this.axios.get('https://0zrzc6qbtj.execute-api.us-east-1.amazonaws.com/kinside/actors').then(({ data }) => {
+        this.generateObjectMapperForActors(data);
+      });
+    },
+    generateObjectMapperForActors(actors: Array<Record<string, string>>) {
+      actors.forEach((actor: Record<string, string>) => {
+        if (!this.actors[actor.id]) {
+          this.actors[actor.id] = {
+            firstName: actor.first_name,
+            lastName: actor.last_name,
+          };
+        }
+      });
+    },
   },
 });
 </script>

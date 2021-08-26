@@ -1,5 +1,5 @@
 <template>
-  <Home class="home"/>
+  <Home />
 </template>
 
 <script lang="ts">
@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
 import Home from './components/Home.vue';
 
 export default defineComponent({
-  name: 'App',
+  name: 'App' as string,
   components: {
     Home,
   },
