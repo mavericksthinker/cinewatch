@@ -1,5 +1,9 @@
 @use "src/scss/variables/base-variables";
 
+.account-info-container {
+  position: relative;
+}
+
 .account-salutation {
   color: base-variables.$body-content;
 
@@ -10,6 +14,7 @@
 
 .user-name {
   color: base-variables.$primary;
+  background-color: transparent;
 }
 
 .user-image {
@@ -17,4 +22,22 @@
   height: 40px;
   border-radius: 50%;
   margin-left: 1em;
+
+  @media (max-width: 540px) {
+    &:hover~.account-salutation-popup {
+      display: block;
+    }
+  }
+}
+
+.account-salutation-popup {
+  position: absolute;
+  display: none;
+  background-color: rgba(base-variables.$primary, 0.4);
+  color: base-variables.$body-content;
+  border-radius: 30px;
+  bottom: -65%;
+  right: 0;
+  padding: 0.2em 0.4em;
+  white-space: nowrap;
 }

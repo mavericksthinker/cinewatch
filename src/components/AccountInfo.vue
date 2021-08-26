@@ -1,9 +1,14 @@
 <template>
   <div class="account-info-container flex justify-content__center align-items__center">
     <div class="account-salutation-container">
-      <div class="account-salutation">Logged in as <span class="user-name">{{userName}}</span></div>
+      <div class="account-salutation">
+        Logged in as <span class="user-name">{{ userName }}</span>
+      </div>
     </div>
     <img src="../assets/images/pug.jpeg" :alt="salutation" class="user-image">
+    <div class="account-salutation-popup">
+      Logged in as <span class="user-name">{{ userName }}</span>
+    </div>
   </div>
 </template>
 
