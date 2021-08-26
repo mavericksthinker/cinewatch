@@ -4,7 +4,7 @@
   </header>
   <main class="body-main">
     <section class="body-composite">
-      <Movies :movies="movies"/>
+      <Movies :movies="[ ...movies ]"/>
     </section>
   </main>
   <Loader class="loader" :class="{visible: loading}" />
@@ -28,30 +28,33 @@ export default defineComponent({
     Movies,
   },
   created() {
-    this.getActors();
-  },
-  mounted() {
-    this.getMovies();
+    this.getRequiredPageData();
   },
   data() {
     return {
       search: '',
       loading: false,
       actors: {},
+      moviesList: [],
       movies: [],
+      page: 1,
+      offset: 6,
     };
   },
   methods: {
-    getActors() {
+    getRequiredPageData() {
       this.loading = true;
-      return this.axios.get(this.getUrlToRetrieveActors()).then(({ data }) => {
-        this.generateObjectMapperForActors(data);
+      this.axios.all([this.getActors(), this.getMovies()]).then(([actors, movies]) => {
+        this.generateObjectMapperForActors(actors.data);
+        this.storeMoviesList(movies.data);
+        this.initiateLazyLoadingOfMovieList();
       });
     },
+    getActors() {
+      return this.axios.get(this.getUrlToRetrieveActors());
+    },
     getMovies() {
-      return this.axios.get(this.getUrlToRetrieveMovies()).then(({ data }) => {
-        this.resolveMoviesDetails(data);
-      });
+      return this.axios.get(this.getUrlToRetrieveMovies());
     },
     generateObjectMapperForActors(actors) {
       actors.forEach((actor) => {
@@ -63,19 +66,42 @@ export default defineComponent({
         }
       });
     },
-    resolveMoviesDetails(movies) {
+    storeMoviesList(movies) {
+      this.moviesList = movies;
+    },
+    initiateLazyLoadingOfMovieList() {
+      this.movies = [];
+      this.page = 1;
+      this.performLazyLoading();
+    },
+    performLazyLoading() {
       this.loading = true;
-      movies.map((movie) => {
-        const actors = movie.actorIds;
+      const contentLoaded = this.movies.length;
+      let newMovies = [];
+      const elementsToBeLoaded = this.page * this.offset;
+      for (let i = contentLoaded; i < elementsToBeLoaded; i += 1) {
+        newMovies.push(
+          this.moviesList[i],
+        );
+      }
+      newMovies = this.resolveMoviesDetails(newMovies);
+      this.movies = [...this.movies, ...newMovies];
+      this.page += 1;
+      this.loading = false;
+    },
+    resolveMoviesDetails(movies) {
+      return movies.map((movie) => {
+        const movieData = { ...movie };
+        const actors = [...movie.actorIds];
         actors.forEach((actorId, index) => {
           const actorDetails = this.actors[actorId];
-          actors[index] = `${actorDetails?.firstName} ${actorDetails?.lastName}`;
+          const firstName = actorDetails?.firstName;
+          const lastName = actorDetails?.lastName;
+          actors[index] = `${firstName} ${lastName}`;
+          movieData.actorIds = actors;
         });
-        return movie;
+        return movieData;
       });
-      this.movies = movies;
-      this.loading = false;
-      console.log(this.movies[1]);
     },
     getUrlToRetrieveMovies() {
       return BASE_URL + MOVIES;
