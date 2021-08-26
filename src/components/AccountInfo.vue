@@ -5,9 +5,27 @@
         Logged in as <span class="user-name">{{ userName }}</span>
       </div>
     </div>
-    <img src="../assets/images/pug.jpeg" :alt="salutation" class="user-image">
-    <div class="account-salutation-popup">
-      Logged in as <span class="user-name">{{ userName }}</span>
+    <img src="../assets/images/pug.jpeg"
+         :alt="salutation"
+         class="user-image"
+         v-on:click="showAccountPopup"
+    >
+    <div class="account-popup-container"
+         :class="{visible: activateAccountPopup}"
+    >
+      <div class="account-salutation w-full">
+        Logged in as <span class="user-name">{{ userName }}</span>
+      </div>
+      <div class="menu-container flex flex-col h-full">
+        <a v-for="menuItem in menuItems"
+           :key="menuItem.label"
+           :href="menuItem.link"
+           class="menu-link"
+           :class="menuItem.className"
+        >
+          {{ menuItem.label }}
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -20,11 +38,43 @@ export default defineComponent({
   props: {
     userName: {
       type: String,
-      default: 'User',
+      required: true,
+    },
+  },
+  data() {
+    return {
+      activateAccountPopup: false as boolean,
+      menuItems: [
+        {
+          label: 'Preferences',
+          className: 'preferences',
+          link: '#',
+        },
+        {
+          label: 'Settings',
+          className: 'settings',
+          link: '#',
+        },
+        {
+          label: 'Help',
+          className: 'help',
+          link: '#',
+        },
+        {
+          label: 'Logout',
+          className: 'logout',
+          link: '#',
+        },
+      ],
+    };
+  },
+  methods: {
+    showAccountPopup(): void {
+      this.activateAccountPopup = !this.activateAccountPopup;
     },
   },
   computed: {
-    salutation() {
+    salutation(): string {
       return `Logged in as ${this.userName}`;
     },
   },

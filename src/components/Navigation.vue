@@ -16,7 +16,7 @@ import Search from '@/components/Search.vue';
 import AccountInfo from '@/components/AccountInfo.vue';
 
 export default defineComponent({
-  name: 'Navigation',
+  name: 'Navigation' as string,
   components: {
     Logo,
     Search,

@@ -5,8 +5,11 @@
 
 * {
   @include base-mixins.remove-defaults;
-  background-color: base-variables.$background-color;
   font-size: 16px;
+}
+
+body {
+  background-color: base-variables.$background-color;
 }
 
 #app {
@@ -17,11 +20,31 @@
 
 // Default classes declaration
 
-// Flex
+// Display
+
+.block {
+  display: block!important;
+}
+
+.none {
+  display: none!important;
+}
 
 .flex {
   display: flex;
 }
+
+// Visibility
+
+.visible {
+  visibility: visible!important;
+}
+
+.hidden {
+  visibility: hidden!important;
+}
+
+// Flex
 
 .flex-col {
   flex-direction: column;
@@ -195,6 +218,11 @@
   width: 100%;
 }
 
+// Height
+
+.h-full {
+  height: 100%;
+}
 
 // Background
 

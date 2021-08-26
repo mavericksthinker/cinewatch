@@ -9,7 +9,7 @@ import { defineComponent } from 'vue';
 import Navigation from '@/components/Navigation.vue';
 
 export default defineComponent({
-  name: 'Header',
+  name: 'Header' as string,
   components: {
     Navigation,
   },

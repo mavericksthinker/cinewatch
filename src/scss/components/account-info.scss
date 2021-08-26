@@ -4,11 +4,13 @@
   position: relative;
 }
 
-.account-salutation {
-  color: base-variables.$body-content;
+.account-salutation-container {
+  .account-salutation {
+    color: base-variables.$body-content;
 
-  @media (max-width: 540px) {
-    display: none;
+    @media (max-width: 540px) {
+      display: none;
+    }
   }
 }
 
@@ -22,22 +24,66 @@
   height: 40px;
   border-radius: 50%;
   margin-left: 1em;
+  cursor: pointer;
+}
+
+.account-popup-container {
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(base-variables.$body-content, 1);
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  bottom: -500%;
+  right: 0;
+  padding: 1.2em 0;
+  white-space: nowrap;
+  width: 188px;
+  height: 186px;
+  overflow-y: hidden;
+
+  .account-salutation {
+    display: none;
+    margin-bottom: 0.6em;
+    padding: 0.5em 1.5em 0;
+
+    @media (max-width: 540px) {
+       display: block;
+     }
+  }
 
   @media (max-width: 540px) {
-    &:hover~.account-salutation-popup {
-      display: block;
-    }
+    height: 210px;
+    bottom: -560%;
   }
 }
 
-.account-salutation-popup {
-  position: absolute;
-  display: none;
-  background-color: rgba(base-variables.$primary, 0.4);
-  color: base-variables.$body-content;
-  border-radius: 30px;
-  bottom: -65%;
-  right: 0;
-  padding: 0.2em 0.4em;
-  white-space: nowrap;
+.menu-container {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-link {
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  color: base-variables.$background-color;
+
+  &:first-child {
+    margin-top: 0.4em;
+  }
+
+  &:hover {
+    background-color: black;
+    color: base-variables.$body-content;
+  }
+
+  @media (max-width: 540px) {
+    &:last-child {
+      margin-bottom: 1.5em;
+    }
+  }
 }
