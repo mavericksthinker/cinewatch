@@ -1,4 +1,5 @@
 <template>
+  <a class="movie-link" :href="movie.pageUrl" target="_blank">
   <div class="movie-container flex align-items__flex-end flex-col justify-content__flex-end"
        :style="{ backgroundImage: `url(${movie.posterUrl})` }"
   >
@@ -14,6 +15,7 @@
       </div>
     </div>
   </div>
+  </a>
 </template>
 
 <script>
@@ -29,6 +31,7 @@ export default defineComponent({
       return `${this.movie.rating || 0}`;
     },
     getMovieStarring() {
+      console.log(this.movie);
       return `Starring: ${this.movie.actorIds.join(', ')}`;
     },
     getMoviePlot() {
