@@ -1,20 +1,39 @@
 <template>
-  <section class="home-container">
+  <section class="loader-overlay">
+    <Loader class="loader"/>
+  </section>
+  <section class="header-composite">
     <Header class="header"/>
+  </section>
+  <section class="body-composite">
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
+import Loader from '@/components/Loader.vue';
 
 export default defineComponent({
   name: 'Home' as string,
   components: {
+    Loader,
     Header,
   },
-  props: {
-    msg: String,
+  // created() {
+  //
+  // },
+  data() {
+    return {
+      search: String,
+      actors: {},
+      movies: [],
+    };
+  },
+  methods: {
+    // getActors() {
+    //
+    // },
   },
 });
 </script>

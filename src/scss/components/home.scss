@@ -1,7 +1,11 @@
-.home-container {
+.loader {
+  z-index: 50;
+}
+
+.header-composite {
   padding: 0 2em;
 }
 
 .header {
-  z-index: 999;
+  z-index: 100;
 }
