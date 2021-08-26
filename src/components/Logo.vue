@@ -3,15 +3,15 @@
               flex
               align-items__center"
   >
-    <div class="logo-container__logo-icon-container">
+    <div class="logo-icon-container">
       <fa icon="film" class="logo-icon" />
     </div>
-    <div class="logo-container__logo-text-container">
-      <label class="logo-text
+    <div class="logo-label-container">
+      <h1 class="logo-label
                     font-weight-bolder
                     font-pt
                     font-italic"
-      >{{name}}</label>
+      >{{name}}</h1>
     </div>
   </div>
 </template>

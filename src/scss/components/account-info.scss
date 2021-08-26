@@ -1,0 +1,20 @@
+@use "src/scss/variables/base-variables";
+
+.account-salutation {
+  color: base-variables.$body-content;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
+}
+
+.user-name {
+  color: base-variables.$primary;
+}
+
+.user-image {
+  width: 47px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 1em;
+}

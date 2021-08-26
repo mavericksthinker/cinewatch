@@ -2,7 +2,14 @@
   font-size: 3rem;
 }
 
-.logo-text {
+.logo-label-container {
+  @media (max-width: 300px) {
+    display: none;
+  }
+}
+
+.logo-label {
   font-size: 1.8rem;
   margin-left: 0.6rem;
 }
+

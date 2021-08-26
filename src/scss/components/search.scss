@@ -1,6 +1,6 @@
 @use "src/scss/variables/base-variables";
 
-.search-bar {
+.search-container {
   padding: 0.5em 1.1em;
   border-radius: 50px;
 }
@@ -11,7 +11,7 @@
   font-size: 1.5rem
 }
 
-.search-bar__input {
+.search-input {
   background-color: transparent;
   width: 100%;
   border: none;
@@ -19,6 +19,11 @@
   margin-left: 0.3em;
   font-weight: 300;
   color: base-variables.$placeholder-text-color;
+
+  @media (max-width: 840px) {
+    width: auto;
+  }
+
   &::placeholder {
     color: rgb(base-variables.$placeholder-text-color, 0.7);
   }

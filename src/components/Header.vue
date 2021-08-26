@@ -1,6 +1,6 @@
 <template>
   <header class="header-container">
-    <Navigation class="navigation flex justify-content__space-around"/>
+    <Navigation class="navigation" app-name="Cinematch"/>
   </header>
 </template>
 

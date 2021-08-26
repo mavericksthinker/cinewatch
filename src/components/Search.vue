@@ -1,11 +1,11 @@
 <template>
-  <div class="search">
-    <div class="search-container">
-      <div class="search-bar bg-color-body-content flex align-items__center">
-        <fa icon="search" class="search-icon"/>
-        <input type="text" class="search-bar__input font-italic" placeholder="Find your match...">
-      </div>
-    </div>
+  <div class="search-container
+              flex
+              bg-color-body-content
+              align-items__center
+  ">
+    <fa icon="search" class="search-icon"/>
+    <input type="text" class="search-input font-italic" placeholder="Find your match...">
   </div>
 </template>
 
