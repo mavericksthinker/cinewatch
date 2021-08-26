@@ -26,6 +26,14 @@ npm install
 npm run serve
 ```
 
+- ### View the app
+
+```shell
+ - Local:   http://localhost:8080/ 
+ - Network: http://192.168.150.176:8080/
+```
+The port might be different based on the availability. This will be shown in detail upon running `npm run serve`
+
 - ### Compiles and minifies for production
 
 ```shell
