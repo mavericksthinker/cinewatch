@@ -1,5 +1,5 @@
 <template>
-  <section class="loader-overlay">
+  <section class="loader-overlay" :class="{visible: loading}">
     <Loader class="loader"/>
   </section>
   <section class="header-composite">
@@ -25,8 +25,9 @@ export default defineComponent({
   // },
   data() {
     return {
-      search: String,
-      actors: {},
+      search: '' as string,
+      loading: false as boolean,
+      actors: {} as Record<string, Record<string, string>>,
       movies: [],
     };
   },
