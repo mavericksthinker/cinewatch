@@ -8,23 +8,49 @@
        v-if="movies.length"
   >
     <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
+    <infinite-scroll
+      @infinite-scroll="infiniteHandler"
+      class="infinite-movie-loader w-full"
+      :class="{visible: loadMore}"
+    >
+    </infinite-scroll>
   </div>
   <div class="no-movies-found" v-else>
     No movies found
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
+import InfiniteScroll from 'infinite-loading-vue3';
 import Movie from '@/components/Movie.vue';
 
 export default defineComponent({
-  name: 'Movies' as string,
+  name: 'Movies',
   props: {
-    movies: Array,
+    movies: {
+      type: Array,
+      required: true,
+    },
+    totalLength: {
+      type: Number,
+      required: true,
+    },
   },
   components: {
     Movie,
+    InfiniteScroll,
+  },
+  methods: {
+    infiniteHandler() {
+      const moviesToBeLoaded = this.movies?.length < this.totalLength;
+      if (moviesToBeLoaded) this.$emit('loadMore');
+    },
+  },
+  computed: {
+    loadMore() {
+      return this.movies?.length < this.totalLength;
+    },
   },
 });
 </script>

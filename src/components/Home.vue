@@ -4,7 +4,10 @@
   </header>
   <main class="body-main">
     <section class="body-composite">
-      <Movies :movies="[ ...movies ]"/>
+      <Movies :movies="[ ...movies ]"
+              :total-length="totalLength"
+              @loadMore="performInfiniteLoading"
+      />
     </section>
   </main>
   <Loader class="loader" :class="{visible: loading}" />
@@ -36,8 +39,8 @@ export default defineComponent({
       loading: false,
       actors: {},
       moviesList: [],
+      totalLength: 0,
       movies: [],
-      page: 1,
       offset: 6,
     };
   },
@@ -47,7 +50,7 @@ export default defineComponent({
       this.axios.all([this.getActors(), this.getMovies()]).then(([actors, movies]) => {
         this.generateObjectMapperForActors(actors.data);
         this.storeMoviesList(movies.data);
-        this.initiateLazyLoadingOfMovieList();
+        this.initiateInfiniteLoadingForMovieList();
       });
     },
     getActors() {
@@ -68,17 +71,21 @@ export default defineComponent({
     },
     storeMoviesList(movies) {
       this.moviesList = movies;
+      this.totalLength = this.moviesList?.length;
     },
-    initiateLazyLoadingOfMovieList() {
-      this.movies = [];
-      this.page = 1;
-      this.performLazyLoading();
-    },
-    performLazyLoading() {
+    initiateInfiniteLoadingForMovieList() {
       this.loading = true;
+      this.movies = [];
+      this.performInfiniteLoading();
+    },
+    performInfiniteLoading() {
       const contentLoaded = this.movies.length;
       let newMovies = [];
-      const elementsToBeLoaded = this.page * this.offset;
+      let elementsToBeLoaded = contentLoaded + this.offset;
+      // Check if next iteration exceeds the total list
+      if (contentLoaded + this.offset > this.totalLength) {
+        elementsToBeLoaded = this.totalLength;
+      }
       for (let i = contentLoaded; i < elementsToBeLoaded; i += 1) {
         newMovies.push(
           this.moviesList[i],
@@ -86,7 +93,6 @@ export default defineComponent({
       }
       newMovies = this.resolveMoviesDetails(newMovies);
       this.movies = [...this.movies, ...newMovies];
-      this.page += 1;
       this.loading = false;
     },
     resolveMoviesDetails(movies) {

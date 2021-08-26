@@ -13,6 +13,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-4",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "infinite-loading-vue3": "^1.0.1",
     "vue": "^3.0.0",
     "vue-axios": "^3.2.5"
   },
