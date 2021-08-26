@@ -35,7 +35,6 @@ export default defineComponent({
   },
   data() {
     return {
-      search: '',
       loading: false,
       actors: {},
       moviesList: [],
@@ -45,9 +44,9 @@ export default defineComponent({
     };
   },
   methods: {
-    getRequiredPageData() {
+    async getRequiredPageData() {
       this.loading = true;
-      this.axios.all([this.getActors(), this.getMovies()]).then(([actors, movies]) => {
+      await this.axios.all([this.getActors(), this.getMovies()]).then(([actors, movies]) => {
         this.generateObjectMapperForActors(actors.data);
         this.storeMoviesList(movies.data);
         this.initiateInfiniteLoadingForMovieList();
@@ -81,6 +80,7 @@ export default defineComponent({
     performInfiniteLoading() {
       const contentLoaded = this.movies.length;
       let newMovies = [];
+      // Normally this will be API request to get subsequent page data via pagination
       let elementsToBeLoaded = contentLoaded + this.offset;
       // Check if next iteration exceeds the total list
       if (contentLoaded + this.offset > this.totalLength) {

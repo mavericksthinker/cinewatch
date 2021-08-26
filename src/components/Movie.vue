@@ -1,5 +1,5 @@
 <template>
-  <a class="movie-link" :href="movie.pageUrl" target="_blank">
+  <a class="movie-link" :href="movie.pageUrl" target="_blank" rel="noopener">
   <div ref="movieContainer"
        :id="`movie-container-${movie.id}`"
        class="movie-container flex align-items__flex-end flex-col justify-content__flex-end"
