@@ -55,9 +55,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - ### Live Preview
 
-```shell
-https://cinematch.netlify.app
-```
+[Click Here](https://cinematch.netlify.app)
 
 ### NOTE
 
