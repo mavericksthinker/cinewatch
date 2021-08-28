@@ -53,6 +53,10 @@ npm run lint
 - ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+- ### Live Preview
+
+[Click Here](https://cinematch.netlify.app)
+
 ### NOTE
 
 - To avoid cors please use this [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for chrome.

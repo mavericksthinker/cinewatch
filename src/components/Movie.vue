@@ -22,6 +22,7 @@
 
 <script>
 import { defineComponent } from 'vue';
+import backupImage from '../assets/images/not-found.jpeg';
 
 export default defineComponent({
   name: 'movie',
@@ -46,7 +47,10 @@ export default defineComponent({
     handleMovieContainerObserver(entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this.movieContainer.style.backgroundImage = `url(${this.movie.posterUrl})`;
+          this.movieContainer.style.backgroundImage = `
+               url(${this.movie.posterUrl}),
+               url("${backupImage}")
+            `;
           this.movieContainerObserver.disconnect();
         }
       });
@@ -67,7 +71,8 @@ export default defineComponent({
       return `${this.movie.rating || 0}`;
     },
     getMovieStarring() {
-      return `Starring: ${this.movie.actorIds.join(', ')}`;
+      const actorsList = this.movie.actorIds.join(', ');
+      return actorsList ? `Starring: ${this.movie.actorIds.join(', ')}` : '';
     },
     getMoviePlot() {
       return `${this.movie.plot.substr(0, 120)}...`;
