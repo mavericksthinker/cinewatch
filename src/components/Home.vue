@@ -50,6 +50,8 @@ export default defineComponent({
         this.generateObjectMapperForActors(actors.data);
         this.storeMoviesList(movies.data);
         this.initiateInfiniteLoadingForMovieList();
+      }).catch(() => {
+        this.loading = false;
       });
     },
     getActors() {
