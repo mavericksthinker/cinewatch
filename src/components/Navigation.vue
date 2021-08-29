@@ -5,7 +5,7 @@
       <Search class="search" />
       <AccountInfo class="account-info" :user-name="userName"/>
     </div>
-    <Search class="search-840" />
+    <Search class="search-960" />
   </section>
 </template>
 

@@ -1,16 +1,16 @@
 .search {
   width: 28%;
 
-  @media (max-width: 840px) {
+  @media (max-width: 960px) {
     display: none;
   }
 }
 
-.search-840 {
+.search-960 {
   margin-top: 1em;
   display: none;
 
-  @media (max-width: 840px) {
+  @media (max-width: 960px) {
     display: flex;
   }
 
