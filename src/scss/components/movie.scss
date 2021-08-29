@@ -2,8 +2,8 @@
 
 .movie-container {
   cursor: pointer;
-  width: 427px;
-  height: 536px;
+  width: 380px;
+  height: 520px;
   margin-bottom: 2.5em;
   border-radius: 40px;
   transition: 0.1s all linear;
@@ -11,12 +11,24 @@
   background-size: cover;
 
   &:hover {
-    border-left: 4px solid;
-    border-bottom: 4px solid;
+    border-left: 5px solid;
+    border-bottom: 5px solid;
     .movie-description {
       display: block;
     }
   }
+
+  @media (max-width: 480px) {
+    width: 83vw;
+    height: 380px;
+    background-size: auto;
+
+    &:hover {
+      border-left: 3px solid;
+      border-bottom: 3px solid;
+    }
+  }
+
 }
 
 .movie-card {
