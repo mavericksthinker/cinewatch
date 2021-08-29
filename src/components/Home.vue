@@ -100,16 +100,29 @@ export default defineComponent({
     resolveMoviesDetails(movies) {
       return movies.map((movie) => {
         const movieData = { ...movie };
-        const actors = [...movie.actorIds];
-        actors.forEach((actorId, index) => {
-          const actorDetails = this.actors[actorId];
-          const firstName = actorDetails?.firstName;
-          const lastName = actorDetails?.lastName;
-          actors[index] = `${firstName} ${lastName}`;
-          movieData.actorIds = actors;
-        });
+        movieData.actorIds = this.resolveActorsList(movie);
         return movieData;
       });
+    },
+    resolveActorsList(movie) {
+      const actorsList = [...movie.actorIds];
+      let actorsListLength = actorsList.length;
+      for (let i = 0; i < actorsListLength; i += 1) {
+        if (this.actors[actorsList[i]]) {
+          actorsList[i] = this.resolveActorName(actorsList[i]);
+        } else {
+          actorsList.splice(i, 1);
+          i -= 1;
+          actorsListLength -= 1;
+        }
+      }
+      return actorsList;
+    },
+    resolveActorName(actor) {
+      const actorDetails = this.actors[actor];
+      const firstName = actorDetails?.firstName;
+      const lastName = actorDetails?.lastName;
+      return `${firstName} ${lastName}`;
     },
     getUrlToRetrieveMovies() {
       return BASE_URL + MOVIES;

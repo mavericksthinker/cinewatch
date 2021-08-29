@@ -71,7 +71,8 @@ export default defineComponent({
       return `${this.movie.rating || 0}`;
     },
     getMovieStarring() {
-      return `Starring: ${this.movie.actorIds.join(', ')}`;
+      const actorsList = this.movie.actorIds.join(', ');
+      return actorsList ? `Starring: ${this.movie.actorIds.join(', ')}` : '';
     },
     getMoviePlot() {
       return `${this.movie.plot.substr(0, 120)}...`;
