@@ -11,9 +11,9 @@
 
 .header,
 .body-main {
-  padding: 1em 6em;
+  padding: 0 6em 0.5em;
 
   @media (max-width: 480px) {
-    padding: 1em 2em;
+    padding: 0.5em 2em;
   }
 }

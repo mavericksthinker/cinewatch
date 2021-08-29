@@ -1,5 +1,5 @@
 .search {
-  width: 20%;
+  width: 28%;
 
   @media (max-width: 840px) {
     display: none;
@@ -16,7 +16,6 @@
 
   @media (max-width: 540px) {
     display: flex;
-    margin-top: 2em;
+    margin-top: 1em;
   }
-
 }

@@ -8,7 +8,7 @@
   .account-salutation {
     color: base-variables.$body-content;
 
-    @media (max-width: 540px) {
+    @media (max-width: 604px) {
       display: none;
     }
   }
@@ -46,7 +46,7 @@
     margin-bottom: 0.6em;
     padding: 0.5em 1.5em 0;
 
-    @media (max-width: 540px) {
+    @media (max-width: 604px) {
        display: block;
      }
   }
