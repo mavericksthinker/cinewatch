@@ -1,7 +1,5 @@
 <template>
-  <header class="header-composite">
-    <Header class="header"/>
-  </header>
+  <Header class="header"/>
   <main class="body-main">
     <section class="body-composite">
       <Movies :movies="[ ...movies ]"

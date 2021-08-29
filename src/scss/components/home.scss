@@ -3,13 +3,17 @@
   top: 0;
   width: 100%;
   background-color: rgb(10, 10, 10);
-  padding: 1em 2em;
 }
 
 .header {
   z-index: 100;
 }
 
+.header,
 .body-main {
-  padding: 1em 2em;
+  padding: 1em 6em;
+
+  @media (max-width: 480px) {
+    padding: 1em 2em;
+  }
 }

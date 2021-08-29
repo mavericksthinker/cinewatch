@@ -75,7 +75,7 @@ export default defineComponent({
       return actorsList ? `Starring: ${this.movie.actorIds.join(', ')}` : '';
     },
     getMoviePlot() {
-      return `${this.movie.plot.substr(0, 120)}...`;
+      return `${this.movie.plot.substr(0, 100)}...`;
     },
   },
 });
