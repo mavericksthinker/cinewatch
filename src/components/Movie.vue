@@ -7,10 +7,10 @@
   >
     <div class="movie-card">
       <h1 class="movie-title">{{ movie.title }}</h1>
-      <h3 class="movie-rating">
+      <h2 class="movie-rating">
         {{ getMovieRating }}
         <span class="movie-rating-over">/10</span>
-      </h3>
+      </h2>
       <div class="movie-description">
         <h2 class="movie-starring">{{ getMovieStarring }}</h2>
         <div class="movie-plot">{{ getMoviePlot }}</div>
