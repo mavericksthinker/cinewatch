@@ -1,3 +1,5 @@
+@use "src/scss/variables/base-variables";
+
 .movies-container {
   position: relative;
   height: 100%;
@@ -11,7 +13,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  color: red;
+  color: base-variables.$primary;
   transform: translate(-50%, -50%);
 }
 

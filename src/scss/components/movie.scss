@@ -4,7 +4,7 @@
   cursor: pointer;
   width: 340px;
   height: 460px;
-  border-radius: 40px;
+  border-radius: 30px;
   transition: 0.1s all linear;
   overflow: hidden;
   background-size: cover;
@@ -49,12 +49,12 @@
 }
 
 .movie-title {
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 
 .movie-rating {
-  font-size: 14px;
+  font-size: 16px;
   color: base-variables.$body-content;
   margin-top: 0.5em;
   font-family: "Acumnin", Roboto, Helvetica, Arial, sans-serif;
@@ -70,13 +70,13 @@
 }
 
 .movie-starring {
-  font-size: 10px;
+  font-size: 11px;
   color: base-variables.$body-content;
   margin-top: 0.6em;
 }
 
 .movie-plot {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 0.4em;
   color: base-variables.$body-content;
 }

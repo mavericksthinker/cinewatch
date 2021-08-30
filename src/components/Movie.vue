@@ -6,13 +6,13 @@
        :data-src="movie.posterUrl"
   >
     <div class="movie-card">
-      <div class="movie-title">{{ movie.title }}</div>
-      <div class="movie-rating">
+      <h1 class="movie-title">{{ movie.title }}</h1>
+      <h3 class="movie-rating">
         {{ getMovieRating }}
         <span class="movie-rating-over">/10</span>
-      </div>
+      </h3>
       <div class="movie-description">
-        <div class="movie-starring">{{ getMovieStarring }}</div>
+        <h2 class="movie-starring">{{ getMovieStarring }}</h2>
         <div class="movie-plot">{{ getMoviePlot }}</div>
       </div>
     </div>
