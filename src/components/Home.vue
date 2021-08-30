@@ -38,7 +38,7 @@ export default defineComponent({
       moviesList: [],
       totalLength: 0,
       movies: [],
-      offset: 6,
+      offset: 10,
     };
   },
   methods: {

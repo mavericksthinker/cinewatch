@@ -2,8 +2,8 @@
 
 .movie-container {
   cursor: pointer;
-  width: 380px;
-  height: 500px;
+  width: 340px;
+  height: 460px;
   border-radius: 40px;
   transition: 0.1s all linear;
   overflow: hidden;
@@ -16,6 +16,11 @@
     .movie-description {
       display: block;
     }
+  }
+
+  @media (max-width: 860px) {
+    width: 280px;
+    height: 400px;
   }
 
   @media (max-width: 480px) {
@@ -44,12 +49,12 @@
 }
 
 .movie-title {
-  font-size: 24px;
+  font-size: 16px;
   letter-spacing: 1px;
 }
 
 .movie-rating {
-  font-size: 18px;
+  font-size: 14px;
   color: base-variables.$body-content;
   margin-top: 0.5em;
   font-family: "Acumnin", Roboto, Helvetica, Arial, sans-serif;
@@ -65,13 +70,13 @@
 }
 
 .movie-starring {
-  font-size: 13px;
+  font-size: 10px;
   color: base-variables.$body-content;
   margin-top: 0.6em;
 }
 
 .movie-plot {
-  font-size: 13px;
+  font-size: 10px;
   margin-top: 0.4em;
   color: base-variables.$body-content;
 }

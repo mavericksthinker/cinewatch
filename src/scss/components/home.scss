@@ -11,10 +11,14 @@
 
 .header,
 .body-main {
-  padding: 0 6% 0.1em;
+  padding: 0 10em 0.1em;
 
   @media (max-width: 1050px) {
-    padding: 0 5% 0.1em;
+    padding: 0 5em 0.1em;
+  }
+
+  @media (max-width: 740px) {
+    padding: 0 3em 0.1em;
   }
 
   @media (max-width: 480px) {

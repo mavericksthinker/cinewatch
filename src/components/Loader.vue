@@ -1,6 +1,8 @@
 <template>
-  <section class="loader-overlay">
-    <fa icon="spinner" class="loader-icon logo-icon" />
+  <section  class="loader-overlay">
+    <div class="loader-container">
+        <fa icon="spinner" class="loader-icon logo-icon" />
+    </div>
   </section>
 </template>
 
